@@ -1,0 +1,188 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "a13bf777-df69-4fca-a595-1655606de26c")
+	(paper "A5")
+	(title_block
+		(title "ARM Seminar Board")
+		(date "2025-05-12")
+		(rev "1.0")
+		(company "Robotics")
+	)
+	(lib_symbols)
+	(sheet
+		(at 110.49 71.12)
+		(size 25.4 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "152b59d9-b97f-4359-9ceb-93ad8b387c8a")
+		(property "Sheetname" "Power"
+			(at 110.49 70.4084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Power.kicad_sch"
+			(at 110.49 84.4046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ARM 세미나 보드"
+				(path "/a13bf777-df69-4fca-a595-1655606de26c"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 110.49 45.72)
+		(size 25.4 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "775ef7db-5804-4ac1-9282-54ccd10ecf9a")
+		(property "Sheetname" "Peripheral"
+			(at 110.49 45.0084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Peripheral.kicad_sch"
+			(at 110.49 59.0046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ARM 세미나 보드"
+				(path "/a13bf777-df69-4fca-a595-1655606de26c"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 72.39 71.12)
+		(size 25.4 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "b5274876-9229-45af-b9b9-2084afeb22e0")
+		(property "Sheetname" "WiFi Module"
+			(at 72.39 70.4084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "WiFi Module.kicad_sch"
+			(at 72.39 84.4046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ARM 세미나 보드"
+				(path "/a13bf777-df69-4fca-a595-1655606de26c"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 72.39 45.72)
+		(size 25.4 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "f513da9a-7c14-4f06-a8e4-d46bbba5d8cc")
+		(property "Sheetname" "MCU"
+			(at 72.39 45.0084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MCU.kicad_sch"
+			(at 72.39 59.0046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ARM 세미나 보드"
+				(path "/a13bf777-df69-4fca-a595-1655606de26c"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
