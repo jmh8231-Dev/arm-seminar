@@ -1,0 +1,7 @@
+../Core/Src/AS6221.c:18:20:AS6221_WriteRegister	32	static
+../Core/Src/AS6221.c:28:20:AS6221_ReadRegister	40	static
+../Core/Src/AS6221.c:39:16:AS6221_Init	24	static
+../Core/Src/AS6221.c:51:6:AS6221_ReadTemperature	24	static
+../Core/Src/AS6221.c:62:6:AS6221_SetHighTemp	32	static
+../Core/Src/AS6221.c:68:6:AS6221_SetLowTemp	32	static
+../Core/Src/AS6221.c:74:16:AS6221_GetLastError	4	static
