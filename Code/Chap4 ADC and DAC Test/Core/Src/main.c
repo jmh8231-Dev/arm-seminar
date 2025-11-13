@@ -116,6 +116,7 @@ int main(void)
   uint8_t str[21];
 
   HAL_ADC_Start_DMA(&hadc1, &adc1_val[0], sizeof(adc1_val));
+  HAL_ADC_Start_DMA(&hadc2, &adc2_val, 1);
 
   HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
 
@@ -128,9 +129,10 @@ int main(void)
 	  sprintf(str, "VR1: %4d  VR2: %4d", adc1_val[0], adc1_val[1]);
 	  lcd_setCurStr(0, 0, str);
 
-	  HAL_ADC_Start(&hadc2);
-	  HAL_ADC_PollForConversion(&hadc2, 100);
-	  adc2_val = HAL_ADC_GetValue(&hadc2);
+//	  HAL_ADC_Start(&hadc2);
+//	  HAL_ADC_PollForConversion(&hadc2, 100);
+//	  adc2_val = HAL_ADC_GetValue(&hadc2);
+
 	  sprintf(str, "VR3: %4d  CDS: %4d", adc1_val[2], adc2_val);
 	  lcd_setCurStr(0, 1, str);
 
