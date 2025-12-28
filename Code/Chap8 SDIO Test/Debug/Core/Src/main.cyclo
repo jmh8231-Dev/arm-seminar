@@ -1,0 +1,9 @@
+../Core/Src/main.c:51:5:_write	1
+../Core/Src/main.c:90:6:map	1
+../Core/Src/main.c:100:5:main	4
+../Core/Src/main.c:223:6:SystemClock_Config	3
+../Core/Src/main.c:268:13:MX_NVIC_Init	1
+../Core/Src/main.c:294:6:HAL_GPIO_EXTI_Callback	5
+../Core/Src/main.c:315:6:HAL_UART_RxCpltCallback	2
+../Core/Src/main.c:323:6:HAL_TIM_PeriodElapsedCallback	2
+../Core/Src/main.c:339:6:Error_Handler	1
