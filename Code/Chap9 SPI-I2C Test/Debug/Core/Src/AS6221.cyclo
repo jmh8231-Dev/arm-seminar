@@ -1,0 +1,7 @@
+../Core/Src/AS6221.c:18:20:AS6221_WriteRegister	2
+../Core/Src/AS6221.c:28:20:AS6221_ReadRegister	2
+../Core/Src/AS6221.c:39:16:AS6221_Init	2
+../Core/Src/AS6221.c:51:6:AS6221_ReadTemperature	2
+../Core/Src/AS6221.c:62:6:AS6221_SetHighTemp	1
+../Core/Src/AS6221.c:68:6:AS6221_SetLowTemp	1
+../Core/Src/AS6221.c:74:16:AS6221_GetLastError	1

@@ -1,0 +1,13 @@
+../Core/Src/VS1003.c:8:13:VS1003_SPI_SetSpeed	16	static
+../Core/Src/VS1003.c:40:17:VS1003_SPI_ReadWriteByte	32	static
+../Core/Src/VS1003.c:49:6:VS1003_Init	8	static
+../Core/Src/VS1003.c:62:6:VS1003_WriteReg	16	static
+../Core/Src/VS1003.c:79:10:VS1003_ReadReg	24	static
+../Core/Src/VS1003.c:99:6:VS1003_ResetDecodeTime	8	static
+../Core/Src/VS1003.c:107:10:VS1003_GetDecodeTime	8	static
+../Core/Src/VS1003.c:114:6:VS1003_SoftReset	16	static
+../Core/Src/VS1003.c:166:6:VS1003_SineTest	8	static
+../Core/Src/VS1003.c:223:6:VS1003_Reset	8	static
+../Core/Src/VS1003.c:238:6:VS1003_RamTest	16	static
+../Core/Src/VS1003.c:261:6:VS1003_SetVol	16	static
+../Core/Src/VS1003.c:282:6:VS1003_WriteData	24	static
