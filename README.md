@@ -41,34 +41,14 @@ GPIO부터 SDIO, 외부 SDRAM(FMC), QSPI, CAN, USB, Wi‑Fi(IoT), RTC 등 **현�
 
 ---
 
-## 2. Images (add these to your repo)
-
-이 README는 아래 폴더 구조를 기준으로 이미지를 참조합니다.
-
-```
-arm-seminar/
-└─ docs/
-   └─ images/
-      ├─ block_diagram.png
-      ├─ board_front.png
-      └─ board_back.png
-```
+## 2. Images
 
 ### 2.1 Block Diagram
-![Block Diagram](docs/images/block_diagram.png)
+![Block Diagram](doc/images/block_diagram.png)
 
 ### 2.2 Board Photos
-![Board Front](docs/images/board_front.png)
-![Board Back](docs/images/board_back.png)
-
-> ✅ **이미지 추가 방법**
-1) 위 파일명으로 이미지를 `docs/images/`에 복사  
-2) Git에 추가  
-```bash
-git add docs/images/block_diagram.png docs/images/board_front.png docs/images/board_back.png
-git commit -m "docs: add ARM Seminar Board images"
-git push
-```
+![Board Front](doc/images/board_front.png)
+![Board Back](doc/images/board_back.png)
 
 ---
 
