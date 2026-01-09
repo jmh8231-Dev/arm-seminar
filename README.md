@@ -55,11 +55,11 @@ arm-seminar/
 ```
 
 ### 2.1 Block Diagram
-![Block Diagram](docs/images/block_diagram.png)
+![Block Diagram](doc/images/block_diagram.png)
 
 ### 2.2 Board Photos
-![Board Front](docs/images/board_front.png)
-![Board Back](docs/images/board_back.png)
+![Board Front](doc/images/board_front.png)
+![Board Back](doc/images/board_back.png)
 
 > ✅ **이미지 추가 방법**
 1) 위 파일명으로 이미지를 `docs/images/`에 복사  
