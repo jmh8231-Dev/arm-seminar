@@ -66,17 +66,6 @@ ARM Seminar Board (Rev 2.0)는 GPIO부터 SDIO, FMC‑SDRAM, QSPI, CAN, USB, Wi�
 
 ## Images
 
-아래 폴더 구조를 기준으로 이미지를 참조합니다.
-
-```text
-arm-seminar/
-└─ docs/
-   └─ images/
-      ├─ block_diagram.png
-      ├─ board_front.png
-      └─ board_back.png
-```
-
 ### Block diagram
 ![Block Diagram](docs/images/block_diagram.png)
 
