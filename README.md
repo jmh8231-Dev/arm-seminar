@@ -1,9 +1,8 @@
 # ARM Seminar Board — Training Kit Rev 2.0
 
 > **MCU:** STM32F405VGT6 (Cortex‑M4)  
-> **Goal:** 실무형 ARM(임베디드) 교육을 위한 “한 보드로 끝내는” 주변장치 통합 실습 키트
 
-**ARM Seminar Board (Rev 2.0)**는 GPIO부터 SDIO, FMC‑SDRAM, QSPI, CAN, USB, Wi‑Fi(IoT), RTC까지  
+ARM Seminar Board (Rev 2.0)는 GPIO부터 SDIO, FMC‑SDRAM, QSPI, CAN, USB, Wi‑Fi(IoT), RTC까지  
 현업에서 자주 쓰는 주변장치를 **한 장의 보드에서 단계적으로 실습**할 수 있도록 구성한 트레이닝 키트입니다.
 
 ---
