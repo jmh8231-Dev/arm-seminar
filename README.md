@@ -83,7 +83,7 @@ ARM Seminar Board (Rev 2.0)는 GPIO부터 SDIO, FMC‑SDRAM, QSPI, CAN, USB, Wi�
 
 ### Flash / Debug
 - **ST‑Link/V2 헤더**로 다운로드/디버깅
-- 또는 **UART‑to‑USB(FT232RL)**로 시리얼 콘솔/로그 출력
+- 또는 UART‑to‑USB(FT232RL)로 시리얼 콘솔/로그 출력
 
 ### Recommended dev environment
 - STM32CubeIDE, STM32CubeMX (권장)
