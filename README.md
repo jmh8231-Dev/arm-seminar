@@ -1,177 +1,147 @@
-# ARM Seminar Board (STM32F405VGT6) — ARM Training Kit v2.0
+# ARM Seminar Board (Training Kit Rev 2.0)
 
-Practical ARM Cortex-M training board + **16(+n) session curriculum** designed for **hands-on embedded systems training**  
-(GPIO → UART → ADC/DMA → SDIO/FATFS → CAN → FreeRTOS → (optional) SDRAM/QSPI/LTDC/GUI)
+> **Platform:** STM32F405VGT6 (Cortex‑M4)  
+> **Goal:** 실무형 ARM(임베디드) 교육을 위한 “한 보드로 끝내는” 주변장치 통합 실습 키트
 
-> Repository: https://github.com/jmh8231-Dev/arm-seminar
-
----
-
-## 1) Overview
-
-This project contains:
-- **ARM Seminar Board (Hardware)**: STM32F405VGT6 기반 실습 보드  
-  (USB Type-C 전원, UART-USB, SDIO microSD, I2C RTC/EEPROM/Temp, CAN, USB OTG FS 등)
-- **Firmware Examples**: 세미나 회차별 예제(권장 구조 제공)
-- **Seminar Curriculum**: 총 16 + n 회차로 구성된 실무 중심 커리큘럼 문서
+이 리포지토리는 **ARM Seminar Board**(Training Kit Rev 2.0)의 하드웨어 설계 자료와 교육/실습용 참고 문서를 정리한 저장소입니다.  
+GPIO부터 SDIO, 외부 SDRAM(FMC), QSPI, CAN, USB, Wi‑Fi(IoT), RTC 등 **현업에서 자주 쓰는 주변장치를 한 번에 실습**할 수 있도록 구성했습니다.
 
 ---
 
-## 2) Board Highlights (What you can practice)
+## 1. What’s on the board
 
-### Core MCU
-- **Main MCU**: STM32F405VGT6 (LQFP-100, Cortex-M4F)
+아래 구성은 **블록 다이어그램/보드 실물 라벨** 기준으로 정리했습니다.
 
-### PC Connectivity / Debug
-- **ST-LINK/V2 다운로드** (권장)
-- **UART-to-USB (FT232RL)**: 디버그 출력/CLI/로그 수집용
+### Core
+- **Main MCU:** STM32F405VGT6
+- **External SDRAM:** FMC 인터페이스
+- **microSD:** SDIO (4‑bit)
+- **QSPI Flash:** 외부 대용량 메모리 실습용
+- **USB:**
+  - USB Type‑C (전원/PC 연결)
+  - USB OTG FS (USB 2.0)
+  - UART‑to‑USB (FT232RL) 디버그/통신
 
-### Storage
-- **microSD (SDIO 4-bit)** + FATFS 실습
-- (Optional Track) **External memory**: SDRAM(FMC), QSPI Flash *(보드 리비전/구성에 따라)*
+### Display / UI
+- **2004 CLCD**
+- **Touch LCD** (LTDC, 24‑bit 병렬)
 
-### Communications
-- **CAN 2.0B** *(Transceiver: SN65HVD231 계열)*
-- **Wi-Fi Module**: ESP-12F(ESP8266) *(UART 기반 연동 / IoT 확장)*
+### Connectivity
+- **Wi‑Fi Module:** ESP‑12F (UART 기반)
+- **CAN:** CAN Tx/Rx + CAN 커넥터
+- **GPS Module** (보드 옵션/확장)
 
-### I2C Peripherals
-- **RTC**: DS3231M + **CR2032 백업**
-- **EEPROM**: AT24C256
-- **Temperature Sensor**: AS6221 *(복수 채널 구성)*
-
-### Analog / GPIO / UI
-- Buttons / LEDs / Buzzer
-- ADC 실습용 입력(예: CDS Cell / 가변저항 등)
-- (옵션) CLCD/디스플레이/LTDC/Touch 등은 커리큘럼 확장 트랙에서 다룸
-
-### Power
-- **USB Type-C 5V 입력**
-- **3.3V Regulator**: LM1117-3.3 계열
-- 테스트 포인트 제공(5V / 3.3V / GND)
+### Sensors / Storage / Misc
+- **RTC:** DS3231 + CR2032 배터리
+- **EEPROM**
+- **Temp Sensor:** AS6221
+- **Analog inputs:** CDS Cell, 가변저항(ADC 실습)
+- **User I/O:** LEDs, Buttons, GPIO/EXTI 스위치
+- **Actuator:** SG90 Servo (PWM), Passive Buzzer
 
 ---
 
-## 3) Repository Structure (Recommended)
+## 2. Images (add these to your repo)
 
-> 레포에 이미 폴더가 있으면 그대로 쓰고, 없으면 아래처럼 정리 추천.
+이 README는 아래 폴더 구조를 기준으로 이미지를 참조합니다.
 
-```text
+```
 arm-seminar/
-├─ hardware/
-│  ├─ schematic/                 # PDF / KiCad project
-│  ├─ bom/                       # BOM files
-│  └─ photos/                    # board images
-├─ firmware/
-│  ├─ common/                    # 공용 드라이버/유틸(UART printf, ringbuffer, etc.)
-│  ├─ session-01_gpio/
-│  ├─ session-02_uart/
-│  ├─ session-04_adc_dma/
-│  ├─ session-08_sdio_fatfs/
-│  ├─ session-10_can/
-│  └─ session-15_freertos/
 └─ docs/
-   ├─ curriculum/                # 세미나 계획서/슬라이드
-   └─ bringup/                   # 보드 bring-up 체크리스트/FAQ
+   └─ images/
+      ├─ block_diagram.png
+      ├─ board_front.png
+      └─ board_back.png
+```
+
+### 2.1 Block Diagram
+![Block Diagram](docs/images/block_diagram.png)
+
+### 2.2 Board Photos
+![Board Front](docs/images/board_front.png)
+![Board Back](docs/images/board_back.png)
+
+> ✅ **이미지 추가 방법**
+1) 위 파일명으로 이미지를 `docs/images/`에 복사  
+2) Git에 추가  
+```bash
+git add docs/images/block_diagram.png docs/images/board_front.png docs/images/board_back.png
+git commit -m "docs: add ARM Seminar Board images"
+git push
 ```
 
 ---
 
-## 4) Quick Start
+## 3. Getting Started (Bring‑up)
 
-### Requirements
-- STM32CubeIDE
-- ST-LINK driver (ST-LINK/V2 사용 시)
-- (Optional) Serial terminal (TeraTerm / PuTTY)
+### 3.1 Power
+- **USB Type‑C**로 5V 전원 공급 (PC/어댑터 모두 가능)
+- RTC는 **CR2032**를 장착하면 전원 분리 후에도 시간 유지
 
-### Steps
-1. **USB Type-C**로 보드 전원 인가
-2. **ST-LINK/V2** 연결 후 `firmware/session-xx_*` 예제 프로젝트 열기
-3. Build & Download
-4. UART-USB(FT232RL) COM 포트로 로그 확인
+### 3.2 Flash / Debug
+- **ST‑Link/V2 헤더**로 다운로드/디버깅
+- 또는 **UART‑to‑USB(FT232RL)**를 사용한 시리얼 콘솔/로그
 
----
-
-## 5) Seminar Curriculum (16 + n sessions)
-
-> “초급 → 중급 → 고급”으로 난이도 상승, 필요 시 하루 2~3회차 묶어서 진행.
-
-### STM32 Basic Track
-- 1-1 개발환경 구축 + H/W 소개
-- 1-2 CubeIDE 기본 + GPIO
-- 1-3 EXTI 외부 인터럽트
-- 2-1 UART Polling (MCU ↔ PC 디버그 채널)
-- 2-2 printf 리타겟
-- 2-3 UART RX Interrupt
-- 3 CLCD 출력
-- 4-1 ADC (Polling + DMA)
-- 4-2 DAC
-- 5 Timer + Interrupt (Delay 구현 포함)
-- 6-1 PWM 생성
-- 6-2 PWM 기반 모터 구동
-- 6-3 실시간 PWM 주기 변경
-- 7 USB Mass Storage (외부 대용량 메모리)
-- 8 SDIO + FATFS (파일 관리)
-- 9-1 SPI (VS1003 기반 실습)
-- 9-2 I2C
-- 10 CAN 통신 (CAN B)
-
-### RTOS / Advanced Track
-- 15-2 FreeRTOS 기초 (Task/Queue/Thread 통신)
-- (n) External SDRAM (FMC)
-- (n) External QSPI
-- (n) LTDC + 외부 프레임버퍼
-- (n) GUI + Touch Interface
-
-### IoT Track (Draft / Optional)
-- Wi-Fi 모듈 사용법 / GPIO 제어 / Sensor value 전송
-- OTA / DFU / 저전력 모드 / 최종 작품 통합
+### 3.3 Recommended dev environment
+- STM32CubeIDE (기본)
+- (선택) STM32CubeProgrammer, Logic Analyzer / CAN‑USB / USB‑TTL
 
 ---
 
-## 6) Practice Assignments (Examples)
+## 4. Peripheral Quick Map (실습용 체크리스트)
 
-- UART
-  - PC에서 특정 문자를 받으면 LED ON/OFF (Polling / Interrupt 버전)
-- Media
-  - **VS1003 + SD Card**로 MP3 플레이어 만들기
-- RTOS
-  - FreeRTOS 기반 병렬 처리로 “보드에 있는 부품들”로 작은 작품 제작
-- IoT
-  - 펌웨어 업데이트 실패 시 이전 펌웨어로 복구(안전한 업데이트 플로우)
+교육 진행 시 “오늘 실습 대상”을 빠르게 체크할 수 있도록 묶었습니다.
 
----
-
-## 7) Hardware Docs
-
-- Schematic (PDF): `hardware/schematic/ARM_Training_Kit_v2.0_schematic.pdf`
-- Curriculum Plan: `docs/curriculum/ARM_Seminar_Plan_KR.pdf`
-- BOM (XLSX): `hardware/bom/ARM_Seminar_Board_BOM_20250925.xlsx`
+- **GPIO/EXTI:** 버튼/스위치, LED
+- **ADC/DMA:** CDS Cell, 가변저항
+- **Timer/PWM:** Servo(SG90), Buzzer
+- **UART:** PC 디버그 콘솔, Wi‑Fi(ESP‑12F)
+- **I2C:** EEPROM, AS6221, DS3231(RTC)
+- **SPI:** VS1003 등 확장
+- **SDIO/FATFS:** microSD 파일시스템
+- **FMC SDRAM:** 외부 메모리 R/W
+- **QSPI:** 외부 Flash R/W
+- **CAN:** CAN B (보드 커넥터)
+- **LTDC/Touch LCD:** 프레임버퍼/GUI(확장)
 
 ---
 
-## 8) Photos / Block Diagram
+## 5. Seminar Curriculum (요약)
 
-> `hardware/photos/`에 아래 파일명을 권장합니다. (README 이미지 링크/문서 통일용)
+세미나는 총 **16 + n회차**로 기획되었고, 초급 → 고급으로 난이도가 점진적으로 상승하도록 설계했습니다.  
+핵심 커리큘럼 예시는 아래와 같습니다.
 
-- `hardware/photos/board_top_labeled.png`
-- `hardware/photos/board_front_labeled.png`
-- `hardware/photos/block_diagram.png`
-
----
-
-## 9) License (Proprietary)
-
-**Copyright (c) 2025–present, MyungHoon Jung. All rights reserved.**
-
-This repository (including hardware design files, schematics, BOM, documents, and firmware) is **proprietary**.  
-You may **not** copy, modify, publish, distribute, sublicense, or use this work (in whole or in part) without **explicit written permission** from the author.
-
-If you need permission for internal training / collaboration, please contact the maintainer.
+- CubeIDE / GPIO / EXTI
+- UART(폴링/인터럽트), printf 디버그
+- CLCD 출력, ADC/DMA, Timer
+- PWM/모터 구동, USB Mass Storage
+- SDIO + FATFS, SPI, I2C, CAN
+- (고급) FreeRTOS, 외부 SDRAM(FMC), QSPI, LTDC/GUI
 
 ---
 
-## 10) Contact
-- Maintainer: MyungHoon Jung (정명훈)
-- GitHub: https://github.com/jmh8231-Dev
+## 6. Revision Notes
 
-_Last updated: 2026-01-09 (KST)_
+Rev 1.0 대비 주요 수정 요구사항(요약)
+- RTC 배터리 홀더 위치 변경(뒷면)
+- USB Type‑C 라인 다이오드 삭제
+- UART 기반 USB 업로드 가능하도록 개선
+- (부가) 실크스크린 영역/사이즈 조정, 날짜/버전 업데이트
+
+---
+
+## 7. Files
+
+- `docs/` : 회로도(PDF), BOM, 세미나 계획서, 수정사항 문서 등
+- (권장) `firmware/` : 예제 코드(회차별), 드라이버, 템플릿
+- (권장) `hardware/` : KiCad 원본, Gerber, 제조 파일
+
+---
+
+## 8. License / Usage
+
+**무단 도용 금지 (All Rights Reserved).**  
+본 저장소의 회로/PCB/문서/이미지/콘텐츠는 저작권자의 사전 서면 허가 없이 **복제, 배포, 상업적 이용, 2차 저작물 제작**을 금지합니다.  
+교육/연구 목적의 검토가 필요하다면, 반드시 저작권자에게 사용 허가를 요청해 주세요. (자세한 내용은 `LICENSE` 참조)
+
+© 2025 MyungHoon Jung. All rights reserved.
