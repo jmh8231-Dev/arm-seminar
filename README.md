@@ -23,14 +23,12 @@ ARM Seminar Board (Rev 2.0)는 GPIO부터 SDIO, FMC‑SDRAM, QSPI, CAN, USB, Wi�
 
 > 아래 구성은 **블록 다이어그램 / 보드 실크 라벨 기준**으로 정리했습니다.
 
-### Core / Memory / Storage
+### Core / Storage
 
 | Category | Item | Interface / Notes |
 |---|---|---|
 | MCU | STM32F405VGT6 | Cortex‑M4 |
-| SDRAM | External SDRAM | **FMC** |
 | microSD | microSD socket | **SDIO (4‑bit)** |
-| Flash | QSPI Flash | 외부 대용량 메모리 실습 |
 
 ### USB / Debug
 
@@ -40,20 +38,18 @@ ARM Seminar Board (Rev 2.0)는 GPIO부터 SDIO, FMC‑SDRAM, QSPI, CAN, USB, Wi�
 | USB OTG FS | USB 2.0 Full‑Speed |
 | UART‑to‑USB | FT232RL 기반 로그/콘솔 |
 
-### Display / UI
+### Display
 
 | Item | Notes |
 |---|---|
 | 2004 CLCD | 캐릭터 LCD |
-| Touch LCD | **LTDC**, 24‑bit 병렬 |
 
-### Connectivity / Expansion
+### Connectivity
 
 | Item | Interface / Notes |
 |---|---|
 | Wi‑Fi module | ESP‑12F (**UART**) |
 | CAN | CAN Tx/Rx + 커넥터 |
-| GPS (Option) | 보드 옵션/확장 |
 
 ### Sensors / Inputs / Actuators
 
@@ -101,7 +97,7 @@ arm-seminar/
 - 또는 **UART‑to‑USB(FT232RL)**로 시리얼 콘솔/로그 출력
 
 ### Recommended dev environment
-- STM32CubeIDE (권장)
+- STM32CubeIDE, STM32CubeMX (권장)
 - (선택) STM32CubeProgrammer, Logic Analyzer, CAN‑USB, USB‑TTL
 
 ---
@@ -117,10 +113,7 @@ arm-seminar/
 - **I2C:** EEPROM, AS6221, DS3231(RTC)  
 - **SPI:** 확장(예: VS1003 등)  
 - **SDIO / FATFS:** microSD 파일 시스템  
-- **FMC SDRAM:** 외부 메모리 R/W  
-- **QSPI:** 외부 Flash R/W  
 - **CAN:** 보드 커넥터  
-- **LTDC / Touch LCD:** Framebuffer / GUI(확장)
 
 ---
 
@@ -134,7 +127,7 @@ arm-seminar/
 - PWM/서보/버저 제어
 - USB (예: Mass Storage)
 - SDIO + FATFS, SPI, I2C, CAN
-- (고급) FreeRTOS, **FMC‑SDRAM**, **QSPI**, **LTDC/GUI**
+- FreeRTOS
 
 ---
 
@@ -146,16 +139,6 @@ Rev 1.0 대비 주요 변경 사항 (요약)
 - USB Type‑C 라인 다이오드 삭제
 - UART 기반 업로드/연동 편의 개선
 - 실크스크린 영역/사이즈 조정, 날짜/버전 업데이트
-
----
-
-## Repository layout
-
-```text
-docs/      : 회로도(PDF), BOM, 세미나 계획서, 수정 사항 문서
-firmware/  : (권장) 예제 코드(회차별), 드라이버, 템플릿
-hardware/  : (권장) KiCad 원본, Gerber, 제조 파일
-```
 
 ---
 
