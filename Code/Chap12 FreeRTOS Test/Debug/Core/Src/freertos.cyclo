@@ -1,0 +1,6 @@
+../Core/Src/freertos.c:53:5:_write	1
+../Core/Src/freertos.c:82:6:map	1
+../Core/Src/freertos.c:99:6:MX_FREERTOS_Init	1
+../Core/Src/freertos.c:145:6:StartDefaultTask	1
+../Core/Src/freertos.c:174:6:StartTask02	1
+../Core/Src/freertos.c:188:6:HAL_GPIO_EXTI_Callback	3
