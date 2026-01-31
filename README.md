@@ -106,9 +106,9 @@ ARM Seminar Board (Rev 2.0)는 GPIO부터 SDIO, FMC‑SDRAM, QSPI, CAN, USB, Wi�
 
 ---
 
-## Curriculum (16 + n)
+## Curriculum (10 + 6)
 
-세미나는 총 **16 + n회차**로 구성되며, 초급 → 고급으로 난이도가 점진적으로 상승하도록 설계했습니다.
+세미나는 총 **10 + 6회차**로 구성되며, 초급 → 고급으로 난이도가 점진적으로 상승하도록 설계했습니다.
 
 - CubeIDE / GPIO / EXTI
 - UART(폴링/인터럽트), printf 디버그
